@@ -6,13 +6,13 @@ namespace polygon {
     //% expandableArgumentMode=toggle
     //% inlineInputMode=inline
     //% n_sides.min=3 n_sides.max=30 n_sides.defl=3
-    //% radius.min=10 radius.max=50 radius.defl=30
+    //% radius.min=10 adius.max=50 radius.defl=30
     //% color.min=1 color.max=15 color.defl=2  
     //% angle.min=0 angle.max=360 angle.defl=0
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-}
+};
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
     private _polygon: Sprite = null
@@ -21,7 +21,7 @@ class Polygon {
     private _radius: number = 30;
     private _color: number = 2;
     private _angle: number = 0;
-    private _types: string[] = ["", "", "", "triangle", "square", "pentagon", "hexagon","heptagon"];
+    private _types: string[] = ["", "", "", "triangle 3", "square 4", "pentagon 5", "hexagon 6", "heptagon 7", "Octagon 8", "Nonagon 9", "Decagon 10", "Hendecagon 11", "Dodecagon 12", "Triskaidecagon 13", "Tetrakaidecagon 14", "Pentadecagon 15", "Hexakaidecagon 16", "Heptadecagon 17", "Octakaidecagon 18", "Enneadecagon 19","Icosagon 20"];
 
     //% lockSetVariable="myPolygon"
     //% blockCombine block="sides"
