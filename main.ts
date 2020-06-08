@@ -70,7 +70,7 @@ class Polygon {
     //% blockCombine block="type"
     get type(): string {
         if (this._n_sides < this._types.length) { return this._types[this._n_sides];}
-        else {return ""}
+        else {return this._n_sides.toString()}
     }
     constructor(n_sides: number, radius: number, color: number, starting_angle_degrees: number) {
         this._n_sides = n_sides;
