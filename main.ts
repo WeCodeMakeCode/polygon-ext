@@ -78,7 +78,7 @@ class Polygon {
         this._color = color;
         this._angle = starting_angle_degrees;
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
-        this._polygon = sprites.create(this._img)
+        this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
     }
     private draw_polygon() {
