@@ -51,12 +51,12 @@ class Polygon {
         this.draw_polygon();
     }
     //% blockSetVariable="myPolygon"
-    //% blockCombine block="starting angle (degrees)"
+    //% blockCombine block="starting angle degrees"
     get angle(): number {
         return this._angle;
     }
     //% blockSetVariable="myPolygon"
-    //% blockCombine block="starting angle (degrees)"
+    //% blockCombine block="starting angle degrees"
     set angle(value: number) {
         this._angle =  (value % 360 ) + 1;   //Math.min(Math.max(value, 0), 360);
         this.draw_polygon();
