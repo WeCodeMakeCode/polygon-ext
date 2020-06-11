@@ -43,6 +43,8 @@ class Polygon {
     //% blockCombine block="radius"
     set radius(value: number) {
         this._radius = value;
+        this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
+        this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
     }
     //%  blockSetVariable="myPolygon"
