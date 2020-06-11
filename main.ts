@@ -39,6 +39,12 @@ class Polygon {
     get radius(): number {
         return this._radius;
     }
+    //% blockSetVariable="myPolygon"
+    //% blockCombine block="radius"
+    set radius(value: number) {
+        this._radius = value;
+        this.draw_polygon();
+    }
     //%  blockSetVariable="myPolygon"
     //% blockCombine block="color"
     get color(): number {
