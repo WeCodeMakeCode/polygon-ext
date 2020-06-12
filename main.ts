@@ -153,9 +153,10 @@ namespace spinner {
         //% blockCombine block="speed"
         set speed(value: number) {
             this._speed = value;
-            game.onUpdate(function () {
+            let freq:number = 1000/this._speed;
+            game.onUpdateInterval(freq, function () {
                 if (this._speed != 0) {
-                    let p:Polygon = this._polygon;
+                    let p: Polygon = this._polygon;
                     p.angle = (p.angle - 360 / p.sides % 360);   /// this._speed 
                 }
             })
