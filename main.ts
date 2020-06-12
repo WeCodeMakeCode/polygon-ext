@@ -23,6 +23,7 @@ namespace polygon {
         })
         return spinner;
 }
+}
 //% blockNamespace=polygon
 class Spinner{
     private _polygon:Polygon = null;
@@ -147,4 +148,3 @@ class Polygon {
         return origin_Y + radius * Math.sin(- angle_radians)
     }
 }
-
