@@ -11,7 +11,7 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-    //% block="create spinner from %polygon=variable_get(myPolygon) with speed %speed"
+    //% block="create spinner from %polygon ith speed %speed"  //=variable_get(myPolygon)
     //% blockSetVariable=mySpinner
     //% speed.min=0 speed.max=10 speed.defl=5
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
