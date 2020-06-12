@@ -11,7 +11,7 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-    //% block="create spinner from %polygon with speed %speed"
+    //% block="create spinner from %polygon=variable_get(myPolygon) with speed %speed"
     //% blockSetVariable=mySpinner
     //% inlineInputMode=inline
     //% speed.min=0 speed.max=10 speed.defl=5
@@ -19,7 +19,7 @@ namespace polygon {
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
         let spinner = new Spinner(polygon,speed);
         game.onUpdate(function () {
-            spinner.polygon.angle = (spinner.polygon.angle.angle + 15) % 360
+            spinner.polygon.angle = (spinner.polygon.angle + 15) % 360
         })
         return spinner;
 }
