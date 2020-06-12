@@ -158,9 +158,9 @@ namespace spinner {
                 if (this._speed != 0) {
                     let p: Polygon = this._polygon;
                     if (this._speed > this._priorSpeed){
-                        p.angle = (p.angle - 360 / p.sides) % 360; 
+                        p.angle = (p.angle - 360 / p.sides) ;
                     } else {
-                        p.angle = (p.angle + 360 / p.sides) % 360; 
+                        p.angle = (p.angle + 360 / p.sides) ; 
                     }
                 }
             })
