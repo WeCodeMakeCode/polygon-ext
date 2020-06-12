@@ -134,7 +134,7 @@ namespace spinner {
         let p = polygon;
         game.onUpdate(function () {
             if(speed != 0){
-                p.angle = (p.angle + (p.sides * speed) % 360);
+                p.angle = (p.angle - (p.sides * speed) % 360);
             }
         })
         return new Spinner(p,speed);
