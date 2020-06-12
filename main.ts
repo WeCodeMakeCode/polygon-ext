@@ -1,4 +1,4 @@
-//%  weight=100 color color=#00c480  blockGap=8
+//%  weight=100 color color=#d26080  blockGap=8
 //% groups='["Polygon", "Spinner"]'
 namespace polygon {
     //% block="create polygon with %n_sides sides radius %radius || color %color angle %angle"
