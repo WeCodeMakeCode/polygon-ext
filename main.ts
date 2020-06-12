@@ -13,8 +13,9 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
+}
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
-export class Polygon {
+class Polygon {
     private _polygon: Sprite = null;
     private _img: Image = null;
     private _n_sides: number = 3;
@@ -121,17 +122,17 @@ export class Polygon {
         return origin_Y + radius * Math.sin(- angle_radians)
     }
 }
-}
+
 //%  weight=90 color=#00cdcd blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
     export class Spinner {
-        private _polygon: polygon.Polygon = null;
+        private _polygon: Polygon = null;
         private _speed: number = 0;
         //% blockSetVariable="mySpinner"
         //% blockCombine block="polygon"
         //% group="Properties"
-        public get polygon():polygon. Polygon {
+        public get polygon(): Polygon {
             return this._polygon;
         }//% group="Properties"
         //% blockSetVariable="mySpinner"
@@ -145,7 +146,7 @@ namespace spinner {
         public set speed(value: number) {
             this._speed = value;
         }
-        constructor(polygon: polygon.Polygon, speed: number = 5) {
+        constructor(polygon: Polygon, speed: number = 5) {
             this._polygon = polygon;
             this._speed = speed;
         }
