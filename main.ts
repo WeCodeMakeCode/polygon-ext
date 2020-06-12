@@ -128,7 +128,7 @@ class Polygon {
 namespace spinner {
     //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
     //% blockSetVariable=mySpinner
-    //% speed.min=0 speed.max=10 speed.defl)=5
+    //% speed.min=-10 speed.max=10 speed.defl)=0
     //% group="Create"
     export function createSpinner(polygon: Polygon, speed: number):Spinner {
         let p = polygon;
