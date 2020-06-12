@@ -1,6 +1,5 @@
 //%  weight=100 color color=#008080  blockGap=8
 namespace polygon {
-
     //% block="create polygon with %n_sides sides radius %radius || color %color angle %angle"
     //% blockSetVariable=myPolygon
     //% expandableArgumentMode=toggle
@@ -43,6 +42,7 @@ class Polygon {
     //% blockCombine block="radius"
     set radius(value: number) {
         this._radius = value;
+        this._polygon.destroy();
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
@@ -88,6 +88,12 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
+        this.rotation();
+    }
+    private rotation(){
+        game.onUpdate(function () {
+            this._angle =  (this._angle + 15) % 360
+        })
     }
     private draw_polygon() {
         this._img.fill(0);
