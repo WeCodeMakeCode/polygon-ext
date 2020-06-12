@@ -11,25 +11,45 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-    //% block="create rotating polygon with %n_sides sides radius %radius || color %color angle %angle"
-    //% blockSetVariable=myPolygon
-    //% expandableArgumentMode=toggle
+    //% block="create spinner from %polygon with speed %speed"
+    //% blockSetVariable=mySpinner
     //% inlineInputMode=inline
-    //% n_sides.min=3 n_sides.max=30 n_sides.defl=3
-    //% radius.min=10 adius.max=50 radius.defl=30
-    //% color.min=1 color.max=15 color.defl=2  
+    //% speed.min=0 speed.max=10 speed.defl=5
     //% angle.min=0 angle.max=360 angle.defl=0
-    export function createRotatingPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
-        let p =  new Polygon(n_sides, radius, color, angle);
+    export function createSpinner(polygon:Polygon, speed:number): Spinner {
+        let s = new Spinner(polygon,speed)
         game.onUpdate(function () {
-            p.angle = (p.angle + 15) % 360
+            s.polygon.angle = (s.polygon.angle.angle + 15) % 360
         })
-        return p;
+        return new Spinner(polygon,speed);
+} 
+//% blockNamespace=polygon
+class Spinner{
+    private _polygon:Polygon = null;
+    private _speed:number = 0;
+    //% lockSetVariable="mySpinner"
+    //% blockCombine block="polygon"
+    get polygon(): Polygon {
+        return this._polygon;
+    }
+    //% lockSetVariable="mySpinner"
+    //% blockCombine block="speed"
+    get speed(): number {
+        return this._speed;
+    }
+    //% blockSetVariable="myPolygon"
+    //% blockCombine block="speed"
+    set speed(value: number) {
+        this._speed = value;
+    }
+    constructor(polygon:Polygon, speed:number = 5){
+        this._polygon = polygon;
+        this._speed = speed;
     }
 }
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
-    private _polygon: Sprite = null
+    private _polygon: Sprite = null;
     private _img: Image = null;
     private _n_sides: number = 3;
     private _radius: number = 30;
@@ -103,9 +123,6 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
-        game.onUpdate(function () {
-            this._angle = (this._angle + 15) % 360
-        })
     }
 
     private draw_polygon() {
