@@ -11,7 +11,21 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-
+    //% block="create rotating polygon with %n_sides sides radius %radius || color %color angle %angle"
+    //% blockSetVariable=myPolygon
+    //% expandableArgumentMode=toggle
+    //% inlineInputMode=inline
+    //% n_sides.min=3 n_sides.max=30 n_sides.defl=3
+    //% radius.min=10 adius.max=50 radius.defl=30
+    //% color.min=1 color.max=15 color.defl=2  
+    //% angle.min=0 angle.max=360 angle.defl=0
+    export function createRotatingPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
+        let p =  new Polygon(n_sides, radius, color, angle);
+        game.onUpdate(function () {
+            p.angle = (p.angle + 15) % 360
+        })
+        return p;
+    }
 }
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
@@ -89,9 +103,7 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
-        game.onUpdate(function () {
-            this._angle = (this._angle + 15) % 360
-        })
+
     }
 
     private draw_polygon() {
