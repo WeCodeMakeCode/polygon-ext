@@ -36,7 +36,7 @@ class Spinner{
     get speed(): number {
         return this._speed;
     }
-    //% blockSetVariable="myPolygon"
+    //% blockSetVariable="mySpinner"
     //% blockCombine block="speed"
     set speed(value: number) {
         this._speed = value;
