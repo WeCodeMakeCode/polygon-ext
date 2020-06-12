@@ -13,16 +13,14 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-    //% block="create spinner from %polygon=variables_get(myPolygon) ith speed %speed"
+    //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
     //% blockSetVariable=mySpinner
     //% speed.min=0 speed.max=10 speed.defl=5
     //% group="Spinner"
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
         let spinner = new Spinner(polygon,speed);
         game.onUpdate(function () {
-            spinner.polygon.angle = (spinner.polygon.angle + 360/speed) % 360
-        })
-        return spinner;
+            spinner.polygon.angle = (spinner.polygon.angle + 360/(2*speed))
     }
 }
 //% blockNamespace=polygon
