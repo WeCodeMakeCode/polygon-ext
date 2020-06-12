@@ -145,18 +145,18 @@ namespace spinner {
         //% blockSetVariable="mySpinner"
         //% blockCombine block="polygon"
         //% group="Properties"
-        public get polygon(): Polygon {
+        get polygon(): Polygon {
             return this._polygon;
         }//% group="Properties"
         //% blockSetVariable="mySpinner"
         //% blockCombine block="speed"
-        public get speed(): number {
+        get speed(): number {
             return this._speed;
         }
         //% group="Properties"
         //% blockSetVariable="mySpinner"
         //% blockCombine block="speed"
-        public set speed(value: number) {
+        set speed(value: number) {
             this._speed = value;
         }
         constructor(polygon: Polygon, speed: number = 5) {
