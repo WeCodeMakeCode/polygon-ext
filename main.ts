@@ -155,7 +155,7 @@ namespace spinner {
             this._speed = value;
             game.onUpdate(function () {
                 if (this._speed != 0) {
-                    let p = this._polygon.angle;
+                    let p:Polygon = this._polygon;
                     p.angle = (p.angle - (p.sides * this._speed/30) % 360);
                 }
             })
