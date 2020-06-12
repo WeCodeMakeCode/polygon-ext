@@ -153,16 +153,17 @@ namespace spinner {
         //% blockCombine block="speed"
         set speed(value: number) {
             this._speed = value;
-        }
-        constructor(polygon: Polygon, speed: number = 5) {
-            this._polygon = polygon;
-            this._speed = speed;
-            game.onUpdate( function () {
+            game.onUpdate(function () {
                 if (this._speed != 0) {
                     let p: Polygon = this._polygon;
                     p.angle = (p.angle - 360 / p.sides) % 360;   /// this._speed 
                 }
             })
+        }
+        constructor(polygon: Polygon, speed: number = 5) {
+            this._polygon = polygon;
+            this._speed = speed;
+            this.speed = speed;
         }
     }
 }
