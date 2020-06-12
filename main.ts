@@ -11,7 +11,8 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-};
+
+}
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
     private _polygon: Sprite = null
@@ -88,13 +89,11 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
-        this.rotation();
-    }
-    private rotation(){
         game.onUpdate(function () {
-            this._angle =  (this._angle + 15) % 360
+            this._angle = (this._angle + 15) % 360
         })
     }
+
     private draw_polygon() {
         this._img.fill(0);
         let step_degrees = 360 / this._n_sides
