@@ -20,7 +20,7 @@ namespace polygon {
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
         let spinner = new Spinner(polygon,speed);
         game.onUpdate(function () {
-            spinner.polygon.angle = (spinner.polygon.angle + 15) % 360
+            spinner.polygon.angle = (spinner.polygon.angle + 360/speed) % 360
         })
         return spinner;
     }
