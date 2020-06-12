@@ -132,7 +132,6 @@ namespace spinner {
     //% group="Create"
     export function createSpinner(polygon: Polygon, speed: number):Spinner {
         let p = polygon;
-
         return new Spinner(p,speed);
     }
     export class Spinner {
@@ -162,7 +161,7 @@ namespace spinner {
         }
         constructor(polygon: Polygon, speed: number = 5) {
             this._polygon = polygon;
-            this._speed = speed;
+            this.speed = speed;
         }
     }
 }
