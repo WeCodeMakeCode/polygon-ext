@@ -137,6 +137,7 @@ namespace spinner {
     export class Spinner {
         private _polygon: Polygon = null;
         private _speed: number = 0;
+        private _priorSpeed: number = 0;
         //% blockSetVariable="mySpinner"
         //% blockCombine block="polygon"
         //% group="Properties"
@@ -156,13 +157,18 @@ namespace spinner {
             game.onUpdate(function () {
                 if (this._speed != 0) {
                     let p: Polygon = this._polygon;
-                    p.angle = (p.angle - 360 / p.sides) % 360;   /// this._speed 
+                    if (this._speed > this._priorSpeed){
+                        p.angle = (p.angle - 360 / p.sides) % 360; 
+                    } else {
+                        p.angle = (p.angle + 360 / p.sides) % 360; 
+                    }
                 }
             })
         }
         constructor(polygon: Polygon, speed: number = 5) {
             this._polygon = polygon;
             this._speed = speed;
+            this._priorSpeed = 0;
             this.speed = speed;
         }
     }
