@@ -26,12 +26,12 @@ namespace polygon {
 class Spinner{
     private _polygon:Polygon = null;
     private _speed:number = 0;
-    //% lockSetVariable="mySpinner"
+    //% blockSetVariable="mySpinner"
     //% blockCombine block="polygon"
     get polygon(): Polygon {
         return this._polygon;
     }
-    //% lockSetVariable="mySpinner"
+    //% blockSetVariable="mySpinner"
     //% blockCombine block="speed"
     get speed(): number {
         return this._speed;
