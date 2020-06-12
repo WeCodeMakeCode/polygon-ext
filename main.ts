@@ -13,16 +13,14 @@ namespace polygon {
     }
     //% block="create spinner from %polygon=variable_get(myPolygon) with speed %speed"
     //% blockSetVariable=mySpinner
-    //% inlineInputMode=inline
     //% speed.min=0 speed.max=10 speed.defl=5
-   // //% angle.min=0 angle.max=360 angle.defl=0
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
         let spinner = new Spinner(polygon,speed);
         game.onUpdate(function () {
             spinner.polygon.angle = (spinner.polygon.angle + 15) % 360
         })
         return spinner;
-}
+    }
 }
 //% blockNamespace=polygon
 class Spinner{
