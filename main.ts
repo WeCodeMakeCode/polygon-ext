@@ -125,7 +125,7 @@ export class Polygon {
 //%  weight=90 color=#00cdcd blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
-    class Spinner {
+    export class Spinner {
         private _polygon: polygon.Polygon = null;
         private _speed: number = 0;
         //% blockSetVariable="mySpinner"
