@@ -13,44 +13,9 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
-    //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
-    //% blockSetVariable=mySpinner
-    //% speed.min=0 speed.max=10 speed.defl=5
-    //% group="Spinner"
-    export function createSpinner(polygon:Polygon, speed:number): Spinner {
-        let spinner = new Spinner(polygon,speed);
-        game.onUpdate(function () {
-            spinner.polygon.angle = (spinner.polygon.angle + 360/(.1*speed))
-    })
-        return spinner;
-    }
+
 }
-//% blockNamespace=polygon
-class Spinner{
-    private _polygon:Polygon = null;
-    private _speed:number = 0;
-    //% blockSetVariable="mySpinner"
-    //% blockCombine block="polygon"
-    //% group="Spinner"
-    get polygon(): Polygon {
-        return this._polygon;
-    }//% group="Spinner"
-    //% blockSetVariable="mySpinner"
-    //% blockCombine block="speed"
-    get speed(): number {
-        return this._speed;
-    }
-    //% group="Spinner"
-    //% blockSetVariable="mySpinner"
-    //% blockCombine block="speed"
-    set speed(value: number) {
-        this._speed = value;
-    }
-    constructor(polygon:Polygon, speed:number = 5){
-        this._polygon = polygon;
-        this._speed = speed;
-    }
-}
+
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
     private _polygon: Sprite = null;
