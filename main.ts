@@ -126,7 +126,7 @@ class Polygon {
 //%  weight=100 color=#556b2f blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
-    //% block="create spinner from %polygon=variables_get(mySpinner) with speed %speed"
+    //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
     //% blockSetVariable=mySpinner
     //% speed.min=0 speed.max=10 speed.defl)=5
     //% group="Create"
