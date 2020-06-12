@@ -135,7 +135,7 @@ namespace spinner {
         game.onUpdate(function () {
             p.angle = (p.angle + (p.sides * speed) % 360);
         })
-        return new Spinner(p,5);
+        return new Spinner(p,speed);
     }
     export class Spinner {
         private _polygon: Polygon = null;
