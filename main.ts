@@ -21,6 +21,8 @@ namespace polygon {
         let spinner = new Spinner(polygon,speed);
         game.onUpdate(function () {
             spinner.polygon.angle = (spinner.polygon.angle + 360/(2*speed))
+    })
+        return spinner;
     }
 }
 //% blockNamespace=polygon
