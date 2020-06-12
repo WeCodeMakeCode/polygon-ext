@@ -103,7 +103,9 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
-
+        game.onUpdate(function () {
+            this._angle = (this._angle + 15) % 360
+        })
     }
 
     private draw_polygon() {
