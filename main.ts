@@ -139,7 +139,7 @@ class Polygon {
     }
 
     private draw_polygon() {
-        this._img.fill(0);
+        this._img.fill(15);
         let step_degrees = 360 / this._n_sides
         let angle_degrees = this._angle;
         while (angle_degrees < this._angle + 360) {
