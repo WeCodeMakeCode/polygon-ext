@@ -1,4 +1,4 @@
-//%  weight=100 color color=#00cdcd blockGap=8
+//%  weight=100 color color=#8b0a50 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace polygon {
     //% block="create polygon with %n_sides sides radius %radius || color %color angle %angle"
@@ -123,7 +123,7 @@ class Polygon {
     }
 }
 
-//%  weight=100 color=#556b2f blockGap=8
+//%  weight=100 color=#104e8b blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
     //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
