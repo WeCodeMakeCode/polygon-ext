@@ -123,12 +123,12 @@ class Polygon {
     }
 }
 
-//%  weight=90 color=#00cdcd blockGap=8
+//%  weight=100 color=#556b2f blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
-    //% block="create spinner from %polygon with speed %speed"
+    //% block="create spinner from %polygon=variables_get(mySpinner) with speed %speed"
     //% blockSetVariable=mySpinner
-    //% speed.min=0 speed.max=10 speed.defl=5
+    //% speed.min=0 speed.max=10 speed.defl)=5
     //% group="Create"
     export function createSpinner(polygon: Polygon, speed: number):Spinner {
         let p = new Polygon(3, 20, 6, 0);
