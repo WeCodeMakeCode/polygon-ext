@@ -133,7 +133,7 @@ namespace spinner {
     export function createSpinner(polygon: Polygon, speed: number):Spinner {
         let p = polygon;
         game.onUpdate(function () {
-            p.angle = p.angle + 360/(p.sides * speed);
+            p.angle = (p.angle + (p.sides * speed) % 360);
         })
         return new Spinner(p,5);
     }
