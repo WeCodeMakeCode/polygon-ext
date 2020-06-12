@@ -15,14 +15,14 @@ namespace polygon {
     //% blockSetVariable=mySpinner
     //% inlineInputMode=inline
     //% speed.min=0 speed.max=10 speed.defl=5
-    //% angle.min=0 angle.max=360 angle.defl=0
+   // //% angle.min=0 angle.max=360 angle.defl=0
     export function createSpinner(polygon:Polygon, speed:number): Spinner {
-        let s = new Spinner(polygon,speed)
+        let s = new Spinner(polygon,speed);
         game.onUpdate(function () {
             s.polygon.angle = (s.polygon.angle.angle + 15) % 360
         })
         return new Spinner(polygon,speed);
-} 
+}
 //% blockNamespace=polygon
 class Spinner{
     private _polygon:Polygon = null;
