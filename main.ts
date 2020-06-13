@@ -3,6 +3,8 @@ enum Direction {
     Clockwise = 0,
     //% block="counterclockwise"
     Counterclockwise = 1,
+    //% block="random"
+    random = 2,
 }
 //%  weight=100 color color=#8b0a50 blockGap=8
 //% groups='["Create", "Properties"]'
@@ -173,6 +175,13 @@ namespace spinner {
         //% blockCombine block="direction"
         set direction(value: Direction) {
             this._direction = value;
+            if (this._direction== Direction.random){
+                if (Math.randomRange(0,1=) = 0){
+                    this._direction = Direction.Clockwise;
+                } else{
+                    this._direction = Direction.Counterclockwise;
+                }
+            }
         }
         constructor(polygon: Polygon, speed: number = 5, direction:Direction=Direction.Clockwise) {
             this._polygon = polygon;
