@@ -158,7 +158,7 @@ namespace spinner {
                 if (this._speed >= this._priorSpeed) {
                     this._polygon.angle = (this._polygon.angle - 360 / this._polygon.sides);
                 } else {
-                    this._polygon.angle = this._polygon.angle + Math.Round(360 / this._polygon.sides)
+                    this._polygon.angle = this._polygon.angle + Math.round(360 / this._polygon.sides)
                 }
             })
         }
