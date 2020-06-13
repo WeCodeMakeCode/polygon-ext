@@ -1,7 +1,7 @@
 enum Direction {
-    //% block="left"
+    //% block="clockwise"
     Clockwise = 0,
-    //% block="right"
+    //% block="counterclockwise"
     Counterclockwise = 1,
 }
 //%  weight=100 color color=#8b0a50 blockGap=8
