@@ -163,9 +163,9 @@ namespace spinner {
             this.speed = speed;
             game.onUpdateInterval(200,function () {
                 if (this._speed >= 0) {
-                    this._polygon.angle = this._polygon.angle - Math.round(360 / this._speed / this._polygon.sides);
+                    this._polygon.angle = this._polygon.angle - Math.round(360 / this._polygon.sides);
                 } else {
-                    this._polygon.angle = this._polygon.angle + Math.round(360 / this._speed / this._polygon.sides);
+                    this._polygon.angle = this._polygon.angle + Math.round(360 /  this._polygon.sides);
                 }
             })
         }
