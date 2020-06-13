@@ -154,6 +154,13 @@ namespace spinner {
         //% blockCombine block="speed"
         set speed(value: number) {
             this._speed = value;
+
+        }
+        constructor(polygon: Polygon, speed: number = 5) {
+            this._polygon = polygon;
+            this._speed = speed;
+            this._priorSpeed = 0;
+            this.speed = speed;
             game.onUpdate(function () {
                 if (this._speed >= 0) {
                     this._polygon.angle = this._polygon.angle - this._speed * Math.round(360 / this._speed / this._polygon.sides);
@@ -161,12 +168,6 @@ namespace spinner {
                     this._polygon.angle = this._polygon.angle + this._speed * Math.round(360 / this._speed / this._polygon.sides);
                 }
             })
-        }
-        constructor(polygon: Polygon, speed: number = 5) {
-            this._polygon = polygon;
-            this._speed = speed;
-            this._priorSpeed = 0;
-            this.speed = speed;
         }
     }
 }
