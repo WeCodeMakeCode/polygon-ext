@@ -133,7 +133,7 @@ namespace spinner {
     export function createSpinner(polygon: Polygon, speed: number):Spinner {
         let p = polygon;
         return new Spinner(p,speed);
-    }
+    };
     export class Spinner {
         private _polygon: Polygon = null;
         private _speed: number = 0;
@@ -156,9 +156,9 @@ namespace spinner {
             this._speed = value;
             game.onUpdate(function () {
                 if (this._speed >= this._priorSpeed) {
-                    this._polygon.angle = (this._polygon.angle - Math.round(360 / this._polygon.sides/2));
+                    this._polygon.angle = this._polygon.angle - this._speed * Math.round(360 / this._polygon.sides);
                 } else {
-                    this._polygon.angle = this._polygon.angle + Math.round(360 / this._polygon.sides/2);
+                    this._polygon.angle = this._polygon.angle + this._speed * Math.round(360 / this._polygon.sides);
                 }
             })
         }
