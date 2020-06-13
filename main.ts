@@ -164,13 +164,13 @@ namespace spinner {
         }
         //% group="Properties"
         //% blockSetVariable="mySpinner"
-        //% blockCombine block="speed"
+        //% blockCombine block="direction"
         get direction(): Direction {
             return this._direction;
         }
         //% group="Properties"
         //% blockSetVariable="mySpinner"
-        //% blockCombine block="speed"
+        //% blockCombine block="direction"
         set direction(value: Direction) {
             this._direction = value;
         }
