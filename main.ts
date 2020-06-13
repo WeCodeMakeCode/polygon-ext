@@ -161,7 +161,7 @@ namespace spinner {
             this._speed = speed;
             this._priorSpeed = 0;
             this.speed = speed;
-            game.onUpdateInterval(200,function () {
+            game.onUpdate(function () {
                 if (this._speed >= 0) {
                     this._polygon.angle = this._polygon.angle - Math.round(360 / this._polygon.sides);
                 } else {
