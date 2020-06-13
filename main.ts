@@ -1,3 +1,9 @@
+enum Direction {
+    //% block="left"
+    Clockwise = 0,
+    //% block="right"
+    Counterclockwise = 1,
+}
 //%  weight=100 color color=#8b0a50 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace polygon {
@@ -126,23 +132,25 @@ class Polygon {
 //%  weight=100 color=#104e8b blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
-    //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed"
+    //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed || rotate %direction"
     //% blockSetVariable=mySpinner
     //% speed.min=-10 speed.max=10 speed.defl=0
     //% group="Create"
-    export function createSpinner(polygon: Polygon, speed: number):Spinner {
+    export function createSpinner(polygon: Polygon, speed: number,direction:Direction):Spinner {
         let p = polygon;
-        return new Spinner(p,speed);
+        return new Spinner(p,speed,direction);
     };
     export class Spinner {
         private _polygon: Polygon = null;
         private _speed: number = 0;
+        private _direction:Direction = Direction.Clockwise;
         //% blockSetVariable="mySpinner"
         //% blockCombine block="polygon"
         //% group="Properties"
         get polygon(): Polygon {
             return this._polygon;
-        }//% group="Properties"
+        }
+        //% group="Properties"
         //% blockSetVariable="mySpinner"
         //% blockCombine block="speed"
         get speed(): number {
@@ -155,12 +163,24 @@ namespace spinner {
             this._speed = value;
 
         }
-        constructor(polygon: Polygon, speed: number = 5) {
+        //% group="Properties"
+        //% blockSetVariable="mySpinner"
+        //% blockCombine block="speed"
+        get direction(): Direction {
+            return this._direction;
+        }
+        //% group="Properties"
+        //% blockSetVariable="mySpinner"
+        //% blockCombine block="speed"
+        set direction(value: Direction) {
+            this._direction = value;
+        }
+        constructor(polygon: Polygon, speed: number = 5, direction:Direction=Direction.Clockwise) {
             this._polygon = polygon;
             this._speed = speed;
-            this.speed = speed;
+            this._direction = direction;
             game.onUpdate(function () {
-                if (this._speed >= 0) {
+                if (this._direction == Direction.Clockwise) {
                     this._polygon.angle = this._polygon.angle - this._speed;
                 } else {
                     this._polygon.angle = this._polygon.angle + this._speed;
