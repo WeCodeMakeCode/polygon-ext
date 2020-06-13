@@ -175,10 +175,13 @@ namespace spinner {
         //% blockCombine block="direction"
         set direction(value: Direction) {
             this._direction = value;
-            if (this._direction== Direction.random){
-                if (Math.randomRange(0,1=) = 0){
+            this.pickRandomDirection();
+        }
+        private pickRandomDirection(){
+            if (this._direction == Direction.random) {
+                if (Math.randomRange(0, 1) == 0) {
                     this._direction = Direction.Clockwise;
-                } else{
+                } else {
                     this._direction = Direction.Counterclockwise;
                 }
             }
@@ -186,7 +189,8 @@ namespace spinner {
         constructor(polygon: Polygon, speed: number = 5, direction:Direction=Direction.Clockwise) {
             this._polygon = polygon;
             this._speed = speed;
-            this._direction = direction;
+            this._direction = direction; 
+            this.pickRandomDirection();
             game.onUpdate(function () {
                 if (this._direction == Direction.Clockwise) {
                     this._polygon.angle = this._polygon.angle - this._speed;
