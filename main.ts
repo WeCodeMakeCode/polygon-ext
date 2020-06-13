@@ -137,8 +137,7 @@ namespace spinner {
     //% speed.min=-10 speed.max=10 speed.defl=0
     //% group="Create"
     export function createSpinner(polygon: Polygon, speed: number,direction:Direction):Spinner {
-        let p = polygon;
-        return new Spinner(p,speed,direction);
+        return new Spinner(polygon,speed,direction);
     };
     export class Spinner {
         private _polygon: Polygon = null;
@@ -181,9 +180,9 @@ namespace spinner {
             this._direction = direction;
             game.onUpdate(function () {
                 if (this._direction == Direction.Clockwise) {
-                    this._polygon.angle = this._polygon.angle - this._speed;
-                } else {
                     this._polygon.angle = this._polygon.angle + this._speed;
+                } else {
+                    this._polygon.angle = this._polygon.angle - this._speed;
                 }
             })
         }
