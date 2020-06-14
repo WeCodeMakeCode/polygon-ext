@@ -21,6 +21,12 @@ namespace polygon {
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
+    //% block="destroy polygon %myPolygon"
+    //% group="Create"
+    export function destroyPolygon(polygon:Polygon){
+        polygon.sprite.destroy();
+        polygon = null;
+    }
 }
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
 class Polygon {
@@ -145,6 +151,12 @@ namespace spinner {
     export function createSpinner(polygon: Polygon, speed: number,direction:Direction):Spinner {
         return new Spinner(polygon,speed,direction);
     };
+    //% block="destroy spinner %mySpinner"
+    //% group="Create"
+    export function destroySpinner(spinner: Spinner) {
+        spinner.polygon.sprite.destroy();
+        spinner = null;
+    }
     export class Spinner {
         private _polygon: Polygon = null;
         private _speed: number = 0;
