@@ -3,7 +3,7 @@ enum Direction {
     Clockwise = 0,
     //% block="counterclockwise"
     Counterclockwise = 1,
-    //% block="random"
+    //% block="Random"
     Random = 2,
 }
 //%  weight=100 color color=#8b0a50 blockGap=8
