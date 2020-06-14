@@ -4,7 +4,7 @@ enum Direction {
     //% block="counterclockwise"
     Counterclockwise = 1,
     //% block="random"
-    random = 2,
+    Random = 2,
 }
 //%  weight=100 color color=#8b0a50 blockGap=8
 //% groups='["Create", "Properties"]'
@@ -178,7 +178,7 @@ namespace spinner {
             this.pickRandomDirection();
         }
         private pickRandomDirection(){
-            if (this._direction == Direction.random) {
+            if (this._direction == Direction.Random) {
                 if (Math.randomRange(0, 1) == 0) {
                     this._direction = Direction.Clockwise;
                 } else {
