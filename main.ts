@@ -83,7 +83,12 @@ class Polygon {
     //% blockSetVariable="myPolygon"
     //% blockCombine block="starting angle degrees"
     set angle(value: number) {
-        this._angle =  Math.abs(value % 360) ;   //Math.min(Math.max(value, 0), 360);
+        if (value > 0){
+            this._angle = value % 360;   
+        } else {
+            this._angle = value + 360;          
+        }
+        this._angle =  value % 360;   
         this.draw_polygon();
     }
     //% group="Properties"
