@@ -88,7 +88,6 @@ class Polygon {
         } else {
             this._angle = value + 360;          
         }
-        this._angle =  value % 360;   
         this.draw_polygon();
     }
     //% group="Properties"
