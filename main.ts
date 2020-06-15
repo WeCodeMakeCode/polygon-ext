@@ -6,7 +6,7 @@ enum Direction {
     //% block="Random"
     Random = 2,
 }
-//% weight=100 color=#8b0a50 blockGap=8
+//% weight=100 color=#C71585 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace polygon {
     //% block="create polygon with %n_sides sides radius %radius || color %color angle %angle"
@@ -106,11 +106,11 @@ class Polygon {
     //% blockSetVariable="myPolygon"
     //% blockCombine block="type"
     get type(): string {
-        if (this._sides < this._types.length) { return this._types[this._n_sides];}
+        if (this._sides < this._types.length) { return this._types[this._sides];}
         else {return this._sides.toString()}
     }
-    constructor(n_sides: number, radius: number, color: number, starting_angle_degrees: number) {
-        this._sides = n_sides;
+    constructor(sides: number, radius: number, color: number, starting_angle_degrees: number) {
+        this._sides = sides;
         this._radius = radius;
         this._color = color;
         this._angle = starting_angle_degrees;
@@ -141,7 +141,7 @@ class Polygon {
     }
 }
 
-//%  weight=100 color=#104e8b blockGap=8
+//%  weight=100 color=#4B0082 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
     //% block="create spinner from %polygon=variables_get(myPolygon) with speed %speed || rotate %direction"
