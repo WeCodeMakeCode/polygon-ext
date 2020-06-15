@@ -6,7 +6,7 @@ enum Direction {
     //% block="Random"
     Random = 2,
 }
-//%  weight=100 color color=#8b0a50 blockGap=8
+//% weight=100 color=#8b0a50 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace polygon {
     //% block="create polygon with %n_sides sides radius %radius || color %color angle %angle"
@@ -32,7 +32,7 @@ namespace polygon {
 class Polygon {
     private _polygon: Sprite = null;
     private _img: Image = null;
-    private _n_sides: number = 3;
+    private _sides: number = 3;
     private _radius: number = 30;
     private _color: number = 2;
     private _angle: number = 0;
@@ -41,13 +41,13 @@ class Polygon {
     //% lockSetVariable="myPolygon"
     //% blockCombine block="sides"
     get sides(): number {
-        return this._n_sides;
+        return this._sides;
     }
     //% group="Properties"
     //% blockSetVariable="myPolygon"
     //% blockCombine block="sides"
     set sides(value: number) {
-        this._n_sides = Math.min(Math.max(value, 3), 30);
+        this._sides = Math.min(Math.max(value, 3), 30);
         this.draw_polygon();
     }
     //% group="Properties"
@@ -106,11 +106,11 @@ class Polygon {
     //% blockSetVariable="myPolygon"
     //% blockCombine block="type"
     get type(): string {
-        if (this._n_sides < this._types.length) { return this._types[this._n_sides];}
-        else {return this._n_sides.toString()}
+        if (this._sides < this._types.length) { return this._types[this._n_sides];}
+        else {return this._sides.toString()}
     }
     constructor(n_sides: number, radius: number, color: number, starting_angle_degrees: number) {
-        this._n_sides = n_sides;
+        this._sides = n_sides;
         this._radius = radius;
         this._color = color;
         this._angle = starting_angle_degrees;
@@ -120,7 +120,7 @@ class Polygon {
     }
     private draw_polygon() {
         this._img.fill(0);
-        let step_degrees = 360 / this._n_sides
+        let step_degrees = 360 / this._sides;
         let angle_degrees = this._angle;
         while (angle_degrees < this._angle + 360) {
             let x1 = this.degrees_to_X(angle_degrees, this._radius, this._radius);
