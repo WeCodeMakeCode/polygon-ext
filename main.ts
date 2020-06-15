@@ -150,11 +150,13 @@ namespace spinner {
     //% blockSetVariable=mySpinner
     //% speed.min=-10 speed.max=10 speed.defl=0
     //% group="Create"
+    //%  weight=100 
     export function createSpinner(polygon: Polygon, speed: number,direction:Direction):Spinner {
         return new Spinner(polygon,speed,direction);
     };
     //% block="destroy %spinner=variables_get(mySpinner)"
     //% group="Create"
+    //%  weight=99
     export function destroySpinner(spinner: Spinner) {
         spinner.polygon.sprite.destroy();
         spinner = null;
