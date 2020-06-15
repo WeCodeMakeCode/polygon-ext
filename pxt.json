@@ -1,16 +1,19 @@
 {
     "name": "Polygon Ext 2",
+    "description": "",
     "dependencies": {
         "device": "*"
     },
-    "description": "",
     "files": [
         "main.blocks",
         "main.ts",
         "README.md"
     ],
-    "preferredEditor": "tsprj",
     "testFiles": [
         "test.ts"
-    ]
+    ],
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "tsprj"
 }

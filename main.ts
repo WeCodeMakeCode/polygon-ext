@@ -18,11 +18,13 @@ namespace polygon {
     //% color.min=1 color.max=15 color.defl=2  
     //% angle.min=0 angle.max=360 angle.defl=0
     //% group="Create"
+    //% weight=100
     export function createPolygon(n_sides: number, radius: number, color: number = 2, angle: number = 0): Polygon {
         return new Polygon(n_sides, radius, color, angle);
     }
     //% block="destroy %polygon=variables_get(myPolygon)"
     //% group="Create"
+    //% weight=99
     export function destroyPolygon(polygon:Polygon){
         polygon.sprite.destroy();
         polygon = null;
