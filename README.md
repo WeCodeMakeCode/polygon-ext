@@ -1,8 +1,9 @@
 # polygon-ext ![Build status badge](https://github.com/wecodemakecode/polygon-ext/workflows/MakeCode/badge.svg)
 
-## Includes Both Polygon and Spinner Extensions
-
-
+## Polygon Blocks
+![Polygon Blocks](/polygon.png)
+## Spinner Blocks
+![Spinner Blocks](/spinner.png)
 ## Use this extension
 
 This repository can be added as an **extension** in MakeCode.
