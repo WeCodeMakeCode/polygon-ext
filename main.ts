@@ -26,8 +26,10 @@ namespace polygon {
     //% group="Create"
     //% weight=99
     export function destroyPolygon(polygon:Polygon){
-        polygon.sprite.destroy();
-        polygon = null;
+        if(polygon.sprite!= null)        {
+            polygon.sprite.destroy();
+            polygon = null;
+        }
     }
 }
 //% blockNamespace=polygon color="#008080" blockGap=8blockGap=8
