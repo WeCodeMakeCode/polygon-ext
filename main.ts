@@ -151,7 +151,7 @@ namespace spinner {
     //% speed.min=-10 speed.max=10 speed.defl=0
     //% group="Create"
     //%  weight=100 
-    export function createSpinner(polygon: Polygon, speed: number,direction:Direction.Clockwise):Spinner {
+    export function createSpinner(polygon: Polygon, speed: number,direction:Direction = Direction.Clockwise):Spinner {
         return new Spinner(polygon,speed,direction);
     };
     //% block="destroy %spinner=variables_get(mySpinner)"
