@@ -5,6 +5,8 @@ enum Direction {
     Counterclockwise = 1,
     //% block="Random"
     Random = 2,
+    //% block="Random"
+    Reverse = 3,
 }
 //% weight=100 color=#C71585 blockGap=8
 //% groups='["Create", "Properties"]'
@@ -193,11 +195,18 @@ namespace spinner {
         //% blockSetVariable="mySpinner"
         //% blockCombine block="direction"
         set direction(value: Direction) {
-            this._direction = value;
-            if (this._direction == Direction.Random) {
-                this.pickDirection();
+            if (value == Direction.Reverse) {
+                if (this._direction == Direction.Clockwise){
+                    this._direction = Direction.Counterclockwise;
+                } else {
+                    this._direction = Direction.Clockwise;
+                }
+            } else if (value == Direction.Random) {
+                    this.pickDirection();
+            } else {
+                this._direction = value;
             }
-        }  
+        }
         private pickDirection(){
             if (Math.randomRange(0, 1) == 0) {
                 this._direction = Direction.Clockwise;
