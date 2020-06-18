@@ -38,6 +38,7 @@ class Polygon {
     private _img: Image = null;
     private _sides: number = 3;
     private _radius: number = 30;
+    private _spokes: boolean = false;
     private _color: number = 2;
     private _angle: number = 0;
     private _types: string[] = ["", "", "", "triangle 3", "square 4", "pentagon 5", "hexagon 6", "heptagon 7", "Octagon 8", "Nonagon 9", "Decagon 10", "Hendecagon 11", "Dodecagon 12", "Triskaidecagon 13", "Tetrakaidecagon 14", "Pentadecagon 15", "Hexakaidecagon 16", "Heptadecagon 17", "Octakaidecagon 18", "Enneadecagon 19","Icosagon 20"];
@@ -69,6 +70,18 @@ class Polygon {
         this._img = image.create(2 * this._radius + 1, 2 * this._radius + 1)
         this._polygon = sprites.create(this._img, SpriteKind.Player)
         this.draw_polygon();
+    }
+    //% group="Properties"
+    //% blockSetVariable="myPolygon"
+    //% blockCombine block="spokes"
+    get spokes(): boolean {
+        return this._spokes;
+    }
+    //% group="Properties"
+    //% blockSetVariable="myPolygon"
+    //% blockCombine block="spokes"
+    set spokes(value: boolean) {
+        this._spokes = value;
     }
     //% group="Properties"
     //%  blockSetVariable="myPolygon"
@@ -132,6 +145,9 @@ class Polygon {
             let x2 = this.degrees_to_X(angle_degrees + step_degrees, this._radius, this._radius);
             let y2 = this.degrees_to_Y(angle_degrees + step_degrees, this._radius, this._radius);
             this._img.drawLine(x1, y1, x2, y2, this._color);
+            if (this._spokes){
+                this._img.drawLine(this._radius, this._radius,x1,y1,this._color);
+            }
             angle_degrees += step_degrees;
         }
     }
