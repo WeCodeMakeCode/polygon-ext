@@ -1,13 +1,4 @@
-enum Direction {
-    //% block="clockwise"
-    Clockwise = 0,
-    //% block="counterclockwise"
-    Counterclockwise = 1,
-    //% block="Random"
-    Random = 2,
-    //% block="Reverse"
-    Reverse = 3,
-}
+ 
 //% weight=100 color=#C71585 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace polygon {
@@ -160,7 +151,16 @@ class Polygon {
         return origin_Y + radius * Math.sin(- angle_radians)
     }
 }
-
+enum Direction {
+    //% block="clockwise"
+    Clockwise = 0,
+    //% block="counterclockwise"
+    Counterclockwise = 1,
+    //% block="Random"
+    Random = 2,
+    //% block="Reverse"
+    Reverse = 3,
+}
 //%  weight=100 color=#FF4500 blockGap=8
 //% groups='["Create", "Properties"]'
 namespace spinner {
