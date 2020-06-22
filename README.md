@@ -2,6 +2,10 @@
 
 ## polygon-ext includes both Polygon and Spinner Extensions
 
+## Added Spinner Spokes and Reverse Direction
+
+
+
 ## Polygon Blocks
 ![Polygon Blocks](/polygon.PNG)
 
