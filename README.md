@@ -3,7 +3,7 @@
 ## polygon-ext includes both Polygon and Spinner Extensions
 
 ## Added Spinner Spokes and Reverse Direction
-![Spinner Demo](/Spiner Reverse and Spokes.gif)
+![Spinner Demo](/Spinner_Spokes_and_Reverse_Demo.gif)
 
 ## Polygon Blocks
 ![Polygon Blocks](/polygon.PNG)
